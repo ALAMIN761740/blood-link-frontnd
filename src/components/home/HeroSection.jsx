@@ -43,7 +43,7 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <Link to="/request">
+        <Link to="request-blood">
             <Button
             variant="hero-outline"
             size="xl"

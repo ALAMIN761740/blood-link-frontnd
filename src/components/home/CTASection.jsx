@@ -38,7 +38,7 @@ export function CTASection() {
             </Link>
 
             {/* Urgent Blood Request Button */}
-            <Link to="/request">
+            <Link to="request-blood">
                 <Button
                 variant="hero-outline"
                 size="2xl"

@@ -3,7 +3,14 @@ import { Heart, Phone, Mail, MapPin, Facebook, Twitter, Instagram } from "lucide
 import logo from "../../public/BLOODLINK.png";
 
 export function Footer() {
-  const quickLinks = ["Find Donors", "Request Blood", "Register as Donor", "About Us"];
+  // Explicit routes for quick links
+  const quickLinks = [
+    { name: "Find Donors", path: "/donors" },
+    { name: "Request Blood", path: "/request-blood" },
+    { name: "Register as Donor", path: "/register" },
+    { name: "About Us", path: "/about" }
+  ];
+
   const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
   return (
@@ -17,7 +24,7 @@ export function Footer() {
               <img 
                 src={logo} 
                 alt="BloodLink Logo" 
-                className="h-10 w-10 object-contain transition-transformduration-300 hover:scale-110"
+                className="h-10 w-10 object-contain transition-transform duration-300 hover:scale-110"
               />
               <span className="text-xl font-bold">
                 Blood<span className="text-red-500">Link</span>
@@ -44,12 +51,12 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <Link
-                    to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    to={item.path}
                     className="text-gray-400 hover:text-red-500 text-sm transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
